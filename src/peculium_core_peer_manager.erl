@@ -48,8 +48,8 @@
 -type peer() :: pid().
 
 -record(state, {
-    peers :: set(),
-    connected_peers :: set()
+    peers :: sets:set(),
+    connected_peers :: sets:set()
 }).
 
 -define(SERVER, ?MODULE).
@@ -171,7 +171,7 @@ schedule_trigger(Seconds) ->
     erlang:send_after(timer:seconds(Seconds), self(), check_peers).
 
 %% @private
--spec spawn_peers(Peers :: set()) -> ok.
+-spec spawn_peers(Peers :: sets:set()) -> ok.
 spawn_peers(Peers) ->
     MaxPeers = peculium_core_config:max_peers(),
     case sets:size(Peers) of

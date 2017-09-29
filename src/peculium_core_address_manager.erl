@@ -121,6 +121,6 @@ code_change(_OldVersion, State, _Extra) ->
 -spec random_address() -> {Address :: inet:ip_address(), Network :: network()}.
 random_address() ->
     Keys = mnesia:dirty_all_keys(address),
-    Key = lists:nth(random:uniform(length(Keys)), Keys),
+    Key = lists:nth(rand:uniform(length(Keys)), Keys),
     [#address{ ip = Address }] = mnesia:dirty_read({address, Key}),
     Address.

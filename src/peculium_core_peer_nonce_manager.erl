@@ -46,7 +46,7 @@
 %% Types.
 
 -record(state, {
-    nonces :: set()
+    nonces :: sets:set()
 }).
 
 %% Tests.
@@ -83,7 +83,7 @@ init([]) ->
 
 %% @private
 handle_call(create_nonce, _From, #state { nonces = Nonces } = State) ->
-    Nonce = crypto:rand_bytes(8),
+    Nonce = crypto:strong_rand_bytes(8),
     {reply, Nonce, State#state { nonces = sets:add_element(Nonce, Nonces) }};
 
 handle_call({has_nonce, Nonce}, _From, #state { nonces = Nonces } = State) ->
