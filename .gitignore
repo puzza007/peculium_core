@@ -6,3 +6,4 @@ README.html
 deps/
 rel/peculium_core/
 _build/
+/TEST-file_peculium_core.app.xml

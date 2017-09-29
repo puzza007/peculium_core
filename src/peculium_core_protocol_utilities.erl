@@ -54,7 +54,7 @@
 %% @doc Returns the first four bytes of the double SHA256 checksum of the given Data.
 -spec checksum(Data :: iolist()) -> checksum().
 checksum(Data) ->
-    binary_part(crypto:sha256(crypto:sha256(Data)), {0, 4}).
+    binary_part(crypto:hash(sha256, crypto:hash(sha256, Data)), {0, 4}).
 
 %% @doc Returns an inv atom from a given integer.
 -spec inv_to_atom(InvInteger :: integer()) -> {ok, inv_type()} | {error, any()}.

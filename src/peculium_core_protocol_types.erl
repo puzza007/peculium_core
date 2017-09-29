@@ -372,7 +372,7 @@ decode_transaction_output_vector(X) ->
 -spec prop_bool() -> any().
 prop_bool() ->
     ?FORALL(X, peculium_core_triq:uint8_t(),
-        bool(X) =:= (X > 0)).
+        bool(uint8_t(X)) =:= (X > 0)).
 
 -spec prop_uint8_t_inverse() -> any().
 prop_uint8_t_inverse() ->

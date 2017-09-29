@@ -45,7 +45,7 @@
 %% @doc Returns the double SHA256 checksum of a given input.
 -spec hash(Data :: iolist()) -> hash().
 hash(Data) ->
-    peculium_core_utilities:reverse(crypto:sha256(crypto:sha256(Data))).
+    peculium_core_utilities:reverse(crypto:hash(sha256, crypto:hash(sha256, Data))).
 
 -ifdef(TEST).
 
