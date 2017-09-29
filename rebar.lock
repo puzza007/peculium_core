@@ -26,10 +26,6 @@
  {<<"triq">>,
   {git,"https://github.com/triqng/triq.git",
        {ref,"4480def0b27f8821af4c86d354205d8eab195281"}},
-  0},
- {<<"ucrypto">>,
-  {git,"https://github.com/ahf/erlang-ucrypto.git",
-       {ref,"a7aac28d303e52d32274fe4d617f956e19d3c68e"}},
   0}]}.
 [
 {pkg_hash,[

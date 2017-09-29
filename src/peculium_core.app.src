@@ -15,8 +15,8 @@
         sasl,
         stdlib,
         syntax_tools,
-        triq,
-        ucrypto
+        triq
+        %%,ucrypto
     ]},
     {mod, { peculium_core_app, []}},
     {env, []}
